@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: "3"
+
+tasks:
+  dev:
+    cmd: air
+  run:
+    cmd: go run ./cmd/main.go
+  build:
+    cmd: go build ./cmd/main.go
