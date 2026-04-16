@@ -1,7 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	fmt.Println("air is working @rshdhere, yessir!!")
+	var data int
+
+	go func() {
+		data++
+	}()
+
+	time.Sleep(1 * time.Second)
+
+	if data == 0 {
+		fmt.Printf("the value is %v\n", data)
+	}
 }
