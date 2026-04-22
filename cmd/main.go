@@ -2,14 +2,18 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func main() {
-	for index := range 5 {
-		go func() {
-			fmt.Println(index)
-		}()
+	ch := make(chan int)
+
+	go func() {
+		for i := 0; i < 5; i++ {
+			ch <- i
+		}
+	}()
+
+	for i := 0; i < 5; i++ {
+		fmt.Println(<-ch)
 	}
-	time.Sleep(time.Second)
 }
