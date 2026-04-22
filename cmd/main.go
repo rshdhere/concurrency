@@ -6,6 +6,9 @@ import (
 )
 
 func main() {
-	go fmt.Println("hello from go-routine")
+	go fmt.Println("A")
+	go fmt.Println("B")
+	go fmt.Println("C")
+
 	time.Sleep(time.Second)
 }
