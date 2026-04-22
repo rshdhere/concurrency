@@ -6,9 +6,8 @@ import (
 )
 
 func main() {
-	go fmt.Println("A")
-	go fmt.Println("B")
-	go fmt.Println("C")
-
+	for i := 0; i < 5; i++ {
+		go fmt.Println(i)
+	}
 	time.Sleep(time.Second)
 }
