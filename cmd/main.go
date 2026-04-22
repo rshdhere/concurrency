@@ -2,18 +2,18 @@ package main
 
 import (
 	"fmt"
+	"sync"
 )
 
 func main() {
-	ch := make(chan int)
+	var wg sync.WaitGroup
+
+	wg.Add(1)
 
 	go func() {
-		for i := 0; i < 5; i++ {
-			ch <- i
-		}
+		defer wg.Done()
+		fmt.Println("done")
 	}()
 
-	for i := 0; i < 5; i++ {
-		fmt.Println(<-ch)
-	}
+	wg.Wait()
 }
