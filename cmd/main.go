@@ -6,9 +6,9 @@ import (
 )
 
 func main() {
-	for i := 0; i < 5; i++ {
+	for index := range 5 {
 		go func() {
-			fmt.Println(i)
+			fmt.Println(index)
 		}()
 	}
 	time.Sleep(time.Second)
